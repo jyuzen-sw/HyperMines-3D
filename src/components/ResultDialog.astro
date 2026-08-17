@@ -1,0 +1,21 @@
+<dialog id="resultDialog" class="app-dialog result-overlay" aria-labelledby="resultTitle">
+  <canvas
+    id="victoryCelebrationCanvas"
+    class="victory-celebration"
+    data-celebration="idle"
+    aria-hidden="true"></canvas>
+  <div class="result-dialog">
+    <p id="resultKicker" class="panel-kicker">GAME CLEAR</p>
+    <h2 id="resultTitle">congratulations!</h2>
+    <p id="resultText"></p>
+    <div class="result-stats" id="resultStats"></div>
+    <div class="result-actions">
+      <button id="closeResultButton" class="button button-secondary" type="button"
+        >盤面を見る</button
+      >
+      <button id="resultNewGameButton" class="button button-primary" type="button"
+        >新しいゲーム</button
+      >
+    </div>
+  </div>
+</dialog>

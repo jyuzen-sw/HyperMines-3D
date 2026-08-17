@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.astro/
+.vitest/
+coverage/
+playwright-report/
+test-results/

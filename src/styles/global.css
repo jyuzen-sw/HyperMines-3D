@@ -1,0 +1,20 @@
+@import './base.css';
+
+button:disabled,
+select:disabled,
+input:disabled {
+  cursor: not-allowed;
+}
+
+.button:disabled:hover,
+.icon-button:disabled:hover {
+  transform: none;
+}
+
+.autoplay-toggle[aria-pressed='true'],
+#autoplayToggleButton[aria-pressed='true'] {
+  border-color: var(--dark-shadow) var(--white) var(--white) var(--dark-shadow);
+  color: var(--white);
+  background: var(--navy);
+  box-shadow: none;
+}

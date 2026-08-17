@@ -1,0 +1,106 @@
+<section class="game-layout">
+  <article class="panel board-panel">
+    <header class="board-toolbar" aria-label="ゲーム状況">
+      <div class="counter-box mines-counter">
+        <span class="counter-label">地雷</span>
+        <strong id="minesMetric">010</strong>
+        <small id="flagsMetric">旗 0 / 10</small>
+      </div>
+
+      <div class="assistant-header-status">
+        <button
+          id="newGameButton"
+          class="face-button"
+          type="button"
+          aria-label="同じ盤面で最初から始める"
+          title="同じ盤面で最初から始める"
+        >
+          <span id="statusFace" class="status-face" aria-hidden="true">😑</span>
+          <strong id="statusMetric">準備中</strong>
+          <small id="statusDetail">外側のマスを開く</small>
+        </button>
+        <p
+          id="autoplayReason"
+          class="autoplay-speech-bubble"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          確定できる操作だけを実行し、運ゲーは人間へ引き渡します。
+        </p>
+      </div>
+
+      <div class="counter-box time-counter">
+        <span class="counter-label">時間</span>
+        <strong id="timeMetric">00:00</strong>
+        <small>最初の一手から計測</small>
+      </div>
+    </header>
+
+    <div id="voxelStage" class="voxel-stage">
+      <canvas
+        id="voxelCanvas"
+        tabindex="0"
+        aria-label="回転できる3次元マインスイーパー盤面"
+        aria-describedby="canvasA11yInstructions"></canvas>
+      <p id="canvasA11yInstructions" class="visually-hidden">
+        左ドラッグまたは1本指で回転、右ドラッグでパン、ホイールまたは2本指で拡大縮小とパン、左クリックでマスを開き、右クリックで旗を切り替えます。
+      </p>
+      <div id="webglFallback" class="webgl-fallback" role="alert" hidden>
+        <strong>3D盤面を表示できません</strong>
+        <span>WebGLが有効なブラウザで開いてください。</span>
+      </div>
+      <div class="canvas-legend" aria-hidden="true">
+        <span><i class="legend-square"></i> 閉じたマス</span>
+        <span><i class="legend-number">1</i> 数字</span>
+        <span><i class="legend-flag">⚑</i> 旗</span>
+      </div>
+      <div id="cellTooltip" class="cell-tooltip" hidden></div>
+    </div>
+  </article>
+
+  <aside class="control-column">
+    <article class="panel progress-panel">
+      <header class="panel-header compact-header">
+        <h2>進捗</h2>
+        <strong id="progressMetric">0%</strong>
+      </header>
+      <div class="progress-card">
+        <progress id="progressBar" max="100" value="0" aria-label="ゲーム進捗">0%</progress>
+        <small id="openedMetric">0 / 115 マス</small>
+      </div>
+    </article>
+
+    <article class="panel autoplay-panel">
+      <header class="panel-header compact-header">
+        <h2>AIアシスト</h2>
+        <span id="autoplayStatus" class="autoplay-status">停止中</span>
+      </header>
+      <div class="autoplay-actions">
+        <button id="autoplayToggleButton" class="button button-primary" type="button">
+          <span aria-hidden="true">▶</span> AIアシスト
+        </button>
+        <button id="autoplayStopButton" class="button button-secondary" type="button" disabled>
+          ■ 停止
+        </button>
+        <label class="autoplay-speed">
+          <span>速度</span>
+          <select id="autoplaySpeedSelect" aria-label="AIアシストの速度">
+            <option value="0.5">0.5×</option>
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+          </select>
+        </label>
+      </div>
+    </article>
+
+    <article class="panel feed-panel">
+      <header class="panel-header compact-header">
+        <h2>ゲームログ</h2>
+      </header>
+      <ol id="gameLog" class="game-log" role="log" aria-live="polite" aria-relevant="additions">
+        <li class="game-log-entry" data-tone="info">外側のマスから順に開いてください。</li>
+      </ol>
+    </article>
+  </aside>
+</section>

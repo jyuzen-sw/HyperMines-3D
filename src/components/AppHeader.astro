@@ -1,0 +1,84 @@
+<header class="topbar">
+  <div class="brand-block">
+    <div class="brand-icon" aria-hidden="true">✹</div>
+    <div>
+      <p class="eyebrow">3D MINESWEEPER / 26 NEIGHBORS</p>
+      <h1>HYPERMINES <em>3D</em></h1>
+    </div>
+  </div>
+
+  <div class="header-tools" role="group" aria-label="盤面操作">
+    <button
+      class="header-icon-button mode-button active"
+      type="button"
+      data-mode="open"
+      aria-label="開くモード"
+      aria-pressed="true"
+      title="開くモード (1)"
+    >
+      <span aria-hidden="true">👆</span>
+    </button>
+    <button
+      class="header-icon-button mode-button"
+      type="button"
+      data-mode="flag"
+      aria-label="旗モード"
+      aria-pressed="false"
+      title="旗モード (2)"
+    >
+      <span aria-hidden="true">🚩</span>
+    </button>
+    <span class="header-tools-divider" role="separator" aria-orientation="vertical"></span>
+    <button
+      id="resetCameraButton"
+      class="header-icon-button"
+      type="button"
+      aria-label="視点を戻す"
+      title="視点を戻す"
+    >
+      <span aria-hidden="true">🎯</span>
+    </button>
+    <button
+      id="copyLinkButton"
+      class="header-icon-button"
+      type="button"
+      aria-label="共有URLをコピー"
+      title="共有URLをコピー"
+    >
+      <span aria-hidden="true">🔗</span>
+    </button>
+  </div>
+
+  <div class="mission-controls" aria-label="盤面設定">
+    <label class="field field-seed">
+      <span>SEED</span>
+      <input
+        id="seedInput"
+        inputmode="numeric"
+        autocomplete="off"
+        spellcheck="false"
+        aria-label="シード値"
+      />
+    </label>
+    <label class="field">
+      <span>LEVEL</span>
+      <select id="difficultySelect" aria-label="難易度">
+        <option value="beginner">初級 5³</option>
+        <option value="standard">標準 7³</option>
+        <option value="expert">上級 9³</option>
+      </select>
+    </label>
+    <button id="randomGameButton" class="button button-secondary" type="button">
+      新しいゲーム
+    </button>
+    <button
+      id="howToButton"
+      class="button button-quiet"
+      type="button"
+      aria-haspopup="dialog"
+      aria-controls="howToDialog"
+    >
+      <span aria-hidden="true">?</span> 遊び方
+    </button>
+  </div>
+</header>

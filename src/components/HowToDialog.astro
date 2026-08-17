@@ -1,0 +1,51 @@
+<dialog id="howToDialog" class="app-dialog how-to-dialog" aria-labelledby="howToTitle">
+  <div class="dialog-heading">
+    <div>
+      <h2 id="howToTitle">遊び方</h2>
+    </div>
+    <button id="closeHowToButton" class="icon-button" type="button" aria-label="閉じる">×</button>
+  </div>
+
+  <div class="how-to-content">
+    <section>
+      <h3>目的</h3>
+      <p>地雷を避けながら、立方体の中にある地雷以外の全てのマスを開くとクリアです。</p>
+    </section>
+    <section>
+      <h3>数字の意味</h3>
+      <p>開いたマスの数字は、そのマスを囲む最大26マスに含まれる地雷の数です。</p>
+    </section>
+    <section>
+      <h3>外側から開く</h3>
+      <p>
+        最初は立方体の外側にあるマスだけ操作できます。マスを開くか旗を置くと、その奥のマスも操作できるようになります。旗を外すと閉じたマスが戻ります。
+      </p>
+    </section>
+    <dl class="how-to-actions">
+      <div>
+        <dt>左クリック / 開く</dt><dd>
+          外側のマスを開きます。最初のマスと全近傍は安全で、必ず0から連続して開きます。
+        </dd>
+      </div>
+      <div><dt>右クリック / 旗</dt><dd>地雷だと思うマスの旗を切り替えます。</dd></div>
+      <div><dt>数字をクリック</dt><dd>数字と旗数が一致すると、周囲をまとめて開きます。</dd></div>
+      <div><dt>左ドラッグ / 1本指</dt><dd>盤面を回転します。</dd></div>
+      <div><dt>右ドラッグ</dt><dd>盤面を上下左右へパンします。</dd></div>
+      <div>
+        <dt>ホイール / 2本指</dt><dd>盤面を拡大縮小します。2本指では同時にパンできます。</dd>
+      </div>
+      <div>
+        <dt>👆 / 🚩</dt><dd>上部のボタンで、タッチ操作の「開く」と「旗」を切り替えます。</dd>
+      </div>
+      <div><dt>1 / 2</dt><dd>キーボードで「開く」と「旗」を切り替えます。</dd></div>
+      <div><dt>🎯 / 🔗</dt><dd>視点を初期位置へ戻す／共有URLをコピーします。</dd></div>
+      <div><dt>R / ?</dt><dd>同じ盤面を最初から始める／この遊び方を開きます。</dd></div>
+    </dl>
+    <aside class="ai-guide-note">
+      <h3>AIアシスト</h3>
+      <p>
+        AIは画面に出た数字と旗だけを使い、確実な操作だけを行います。確定手がなくなると停止するため、人間が運試しの一手を操作してから、もう一度AIアシストを開始してください。
+      </p>
+    </aside>
+  </div>
+</dialog>
